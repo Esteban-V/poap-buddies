@@ -1,0 +1,42 @@
+{
+  "name": "poap-buddies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "@types/require-all": "^3.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.6.3",
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^2.6.9",
+    "node-fetch-retry": "^2.0.1",
+    "require-all": "^3.0.0",
+    "tslib": "^2.5.0"
+  }
+}
