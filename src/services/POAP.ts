@@ -4,6 +4,8 @@ import { getMatchingEvents } from '../utils/POAP';
 
 type TokenId = number | string;
 
+const { POAP_API_BASE_URL, POAP_API_KEY } = process.env;
+
 const fetchWithApiHeaders = async (url: string) => {
   const response = await fetch(url, {
     method: 'GET',
@@ -18,12 +20,12 @@ const fetchWithApiHeaders = async (url: string) => {
 };
 
 export const getTokenInfo = (tokenId: TokenId) => {
-  const url = `${process.env.POAP_BASEURL}/token/${tokenId}`;
+  const url = `${POAP_API_BASE_URL}/token/${tokenId}`;
   return fetchWithApiHeaders(url);
 };
 
 export const getAddressTokens = async (address: string) => {
-  const url = `${process.env.POAP_BASEURL}/actions/scan/${address}`;
+  const url = `${POAP_API_BASE_URL}/actions/scan/${address}`;
   const result = await fetchWithApiHeaders(url);
   if(result.error) {
     throw new Error(`Error fetching POAPs for address "${address}": is it valid?`);
@@ -52,6 +54,6 @@ export const getInCommonPOAPS = async (address1: string, address2: string) => {
 
 const getApiHeaders = () => {
   const requestHeaders = new Headers();
-  requestHeaders.set('x-api-key', process.env.POAP_APIKEY || '');
+  requestHeaders.set('x-api-key', POAP_API_KEY || '');
   return requestHeaders;
 };
