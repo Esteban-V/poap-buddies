@@ -56,6 +56,8 @@ Example:
 
 After executing the command, the bot will provide a summary of the POAPs shared between the given addresses, along with additional information such as the oldest common POAP.
 
+<img width="534" alt="image" src="https://user-images.githubusercontent.com/31489995/236877790-0303e620-fd43-44a3-86df-54824a0870da.png">
+
 ## Contributing
 
 We welcome contributions! Feel free to open issues and submit pull requests to improve the project.
